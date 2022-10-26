@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Users</title>
+    </head>
+    <body>
+        <h1>Users Added</h1>
+        <h2>Create User --> <a href="/create"> Create</a> </h2>
+        
+        <table>
+           <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>See</th>
+                <th>Edit</th>
+                <th>Delete</th>
+           </tr>
+           <% if(data.length){ for(var i = 0; i< data.length; i++) {%>
+                <tr>
+                    <td><%= data[i].name%></td>
+                    <td><%= data[i].surname%></td>
+                    <td><%= data[i].age%></td>
+                    <td><a href="/detail/<%= data[i].id%>">See</a></td>
+                    <td><a href="/edit/<%= data[i].id%>">Edit</a></td>
+                    <td><a href="/delete/<%= data[i].id%>">Delete</a></td>
+                </tr>
+            <% } }else{ %>
+                <tr>
+                    <td>No data existed.</td>
+                </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

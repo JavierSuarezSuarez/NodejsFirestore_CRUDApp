@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Edit</title>
+    </head>
+    <body>
+        <h1>Edit User <%= data.name%></h1>
+
+        <form action="/edit/<%= id%>" method="POST">
+            <label for="name">Name: </label>
+            <input name="name" type="text" value="<%= data.name%>">
+
+            <label for="surname">Surname: </label>
+            <input name="surname" type="text" value="<%= data.surname%>">
+
+            <label for="age">Age: </label>
+            <input name="age" type="text" value="<%= data.age%>">
+
+            <input type="submit" value="Update">
+        </form>
+
+    </body>
+</html>
